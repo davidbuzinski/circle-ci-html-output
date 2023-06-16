@@ -3,6 +3,7 @@ function plan = buildfile
 plan = buildplan(localfunctions);
  
 % Declare that the "package" task depends on the "test" task.
+% test
 plan("test").Dependencies = "build";
  
 % Set the "package" task as the task to run when buildtool is called with no input arguments.
