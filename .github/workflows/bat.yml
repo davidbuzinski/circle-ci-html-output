@@ -25,7 +25,7 @@ jobs:
       - name: Check path
         uses: matlab-actions/run-command@v2-rc0
         with:
-          command: matlabpath
+          command: disp(string(matlabpath).split(":"));
       
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
