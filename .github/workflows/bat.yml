@@ -22,6 +22,11 @@ jobs:
           products: Simulink_Test CI/CD_Automation_for_Simulink_Check
           cache: true
 
+      - name: Check path
+        uses: matlab-actions/run-command@v2-rc0
+        with:
+          command: matlabpath
+      
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
         with:
