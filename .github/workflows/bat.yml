@@ -3,7 +3,7 @@ on: [push]
 env:
   MATHWORKS_LICENSING_ENDPOINT: stage
 
-jobs: 
+jobs:
   my-job-v2-rc:
     name: Test Workflow
     strategy:
