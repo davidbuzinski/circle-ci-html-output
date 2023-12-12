@@ -24,7 +24,7 @@ jobs:
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
         with:
-          command: disp(string(matlabpath).split(":")
+          command: disp(string(matlabpath).split(":"))
           
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v2-rc0
@@ -35,7 +35,7 @@ jobs:
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
         with:
-          command: disp(string(matlabpath).split(":")
+          command: disp(string(matlabpath).split(":"))
 
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
