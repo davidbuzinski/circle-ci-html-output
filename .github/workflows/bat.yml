@@ -1,6 +1,6 @@
 on: [push] 
 
-env: 
+env:
   MATHWORKS_LICENSING_ENDPOINT: stage
 
 jobs: 
