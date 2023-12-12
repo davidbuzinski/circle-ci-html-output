@@ -19,23 +19,8 @@ jobs:
         uses: matlab-actions/setup-matlab@v2-rc0
         with:
           release: ${{ matrix.release }}
-          products: Simulink_Test
-
-      - name: Run command
-        uses: matlab-actions/run-command@v2-rc0
-        with:
-          command: disp(string(matlabpath).split(":"))
-          
-      - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v2-rc0
-        with:
-          release: ${{ matrix.release }}
-          products: CI/CD_Automation_for_Simulink_Check
-
-      - name: Run command
-        uses: matlab-actions/run-command@v2-rc0
-        with:
-          command: disp(string(matlabpath).split(":"))
+          products: Simulink_Test CI/CD_Automation_for_Simulink_Check
+          cache: true
 
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
