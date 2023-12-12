@@ -25,4 +25,4 @@ jobs:
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
         with:
-          command: processAdvisorExampleStart
+          command: padv.builtin.query.FindArtifacts
