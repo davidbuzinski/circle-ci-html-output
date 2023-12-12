@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest] # [windows-2022, ubuntu-22.04, macos-12]
-        release: [r2023a]
+        release: [r2023b]
     runs-on: ${{ matrix.os }}
     steps: 
       - name: Check out repository
