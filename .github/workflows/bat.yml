@@ -17,4 +17,5 @@ jobs:
       - name: Run Comamand
         uses: matlab-actions/run-command@v2-rc0
         with:
-          command: disp(pwd);
+          command: pwd
+          startup-options: -log
