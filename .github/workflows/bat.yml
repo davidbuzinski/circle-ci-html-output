@@ -1,22 +1,20 @@
 name: Run MATLAB Build on GitHub-Hosted Runner
 on: [push]
-env:
-  MATHWORKS_LICENSING_ENDPOINT: stage
 jobs: 
   my-job:
     name: Run Command
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps: 
       - name: Check out repository
         uses: actions/checkout@v4
 
       - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v2-rc0
+        uses: matlab-actions/setup-matlab@v2-beta
         with:
           release: r2020b
 
       - name: Run Comamand
-        uses: matlab-actions/run-command@v2-rc0
+        uses: matlab-actions/run-command@v2-beta
         with:
           command: pwd
           startup-options: -log
