@@ -4,7 +4,6 @@ jobs:
     name: Run Tests V2
     strategy:
       matrix:
-        # Run this workflow on different os
         os: [windows-2022, ubuntu-22.04, macos-12]
         release: [r2023a, r2023b]
       fail-fast: false
