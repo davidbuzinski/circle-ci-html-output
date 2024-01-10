@@ -5,8 +5,8 @@ orbs:
 jobs:
   build:
     machine:
-      image: ubuntu-latest
-    steps:
+      image: ubuntu-2204:2023.10.1
+      steps:
       - checkout
       - matlab/install
       - matlab/run-command:
