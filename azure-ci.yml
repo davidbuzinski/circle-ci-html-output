@@ -1,0 +1,10 @@
+pool:
+  vmImage: ubuntu-latest
+steps:
+  - task: InstallMATLAB@1
+  - task: RunMATLABCommand@1
+    inputs:
+      command: ver
+  - task: RunMATLABTests@1
+    inputs:
+      sourceFolder: code
