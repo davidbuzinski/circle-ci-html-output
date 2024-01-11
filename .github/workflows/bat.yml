@@ -10,7 +10,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps: 
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Sets up MATLAB on the GitHub Actions runner
       - name: Setup MATLAB
