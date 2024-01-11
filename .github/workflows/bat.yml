@@ -22,13 +22,13 @@ jobs:
           release: ${{ matrix.release }}
 
       - name: Run command
-        uses: matlab-actions/run-command@v2-beta
+        uses: matlab-actions/run-command@v1
         with:
           command: disp("hello world!")
           startup-options: -nojvm
           
       # Runs a set of commands using the runners shell
       - name: Run tests and generate artifacts
-        uses: matlab-actions/run-tests@v2-beta
+        uses: matlab-actions/run-tests@v1
         with:
           source-folder: code
