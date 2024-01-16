@@ -1,6 +1,6 @@
 on: [push]
 env:
-  MATHWORKS_LICENSING_ENDPOINT: dev
+  MATHWORKS_LICENSING_ENDPOINT: stage
   # MATHWORKS_MATLAB_BATCH_BASE_URL: https://mw-ci-static-dev.s3.amazonaws.com/matlab-batch/v1
 jobs: 
   my-job-v2-rc:
@@ -21,16 +21,13 @@ jobs:
         with:
           release: ${{ matrix.release }}
 
-      - name: check products
-        run: matlab -batch "license inuse"
-      # - name: Run command
-      #   uses: matlab-actions/run-command@v2-rc0
-      #   with:
-      #     command: license inuse
-      #     startup-options: -nojvm
+      - name: Run command
+        uses: matlab-actions/run-command@v1
+        with:
+          command: license inuse
+          startup-options: -nojvm
           
-      # Runs a set of commands using the runners shell
-      # - name: Run tests and generate artifacts
-      #   uses: matlab-actions/run-tests@v2-rc0
-      #   with:
-      #     source-folder: code
+      - name: Run tests and generate artifacts
+        uses: matlab-actions/run-tests@v1
+        with:
+          source-folder: code
