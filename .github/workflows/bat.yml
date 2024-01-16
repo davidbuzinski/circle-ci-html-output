@@ -1,13 +1,13 @@
 on: [push]
-# env:
-#   # MATHWORKS_LICENSING_ENDPOINT: stage
-#   MATHWORKS_MATLAB_BATCH_BASE_URL: https://mw-ci-static-dev.s3.amazonaws.com/matlab-batch/v1
+env:
+  # MATHWORKS_LICENSING_ENDPOINT: stage
+  MATHWORKS_MATLAB_BATCH_BASE_URL: https://mw-ci-static-dev.s3.amazonaws.com/matlab-batch/v1
 jobs: 
   my-job-v2-rc:
     name: Run Tests V2
     strategy:
       matrix:
-        os: [ubuntu-latest] # [windows-2022, ubuntu-22.04, macos-12]
+        os: [windows-2022, ubuntu-22.04, macos-12]
         release: [r2023a, r2023b]
       fail-fast: false
     runs-on: ${{ matrix.os }}
