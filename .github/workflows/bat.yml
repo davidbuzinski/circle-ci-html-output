@@ -1,6 +1,6 @@
 on: [push]
 env:
-  MATHWORKS_LICENSING_ENDPOINT: stage
+  MATHWORKS_LICENSING_ENDPOINT: dev
   # MATHWORKS_MATLAB_BATCH_BASE_URL: https://mw-ci-static-dev.s3.amazonaws.com/matlab-batch/v1
 jobs: 
   my-job-v2-rc:
