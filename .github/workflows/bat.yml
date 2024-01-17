@@ -29,3 +29,8 @@ jobs:
         uses: matlab-actions/setup-matlab@v2-rc
         with:
           release: ${{ matrix.release }}
+
+      - name: Check path again
+        uses: matlab-actions/run-command@v2-rc0
+        with:
+          command: ver
