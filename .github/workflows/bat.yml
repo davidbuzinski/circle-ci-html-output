@@ -16,18 +16,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v2-rc0
+        uses: matlab-actions/setup-matlab@v2-rc
         with:
           release: ${{ matrix.release }}
-          products: Simulink_Test CI/CD_Automation_for_Simulink_Check
-          cache: true
 
       - name: Check path
         uses: matlab-actions/run-command@v2-rc0
         with:
-          command: disp(string(matlabpath).split(";"));
-      
-      - name: Run command
-        uses: matlab-actions/run-command@v2-rc0
+          command: ver
+
+
+      - name: Setup MATLAB
+        uses: matlab-actions/setup-matlab@v2-rc
         with:
-          command: padv.builtin.query.FindArtifacts
+          release: ${{ matrix.release }}
