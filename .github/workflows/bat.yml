@@ -24,7 +24,7 @@ jobs:
       - name: Run command
         uses: matlab-actions/run-command@v2-rc0
         with:
-          command: license inuse
+          command: ver
           startup-options: -nojvm
           
       - name: Run tests and generate artifacts
