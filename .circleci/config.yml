@@ -1,10 +1,25 @@
 version: 2.1
 orbs:
   matlab: mathworks/matlab@dev:v1-rc
+  win: circleci/windows@2.2.0
+
+executors:
+  linux: # a Linux VM running Ubuntu 20.04
+    machine:
+      image: ubuntu-2004:2023.10.1
+  macos: # macos executor running Xcode
+    macos:
+      xcode: 15.1.0
+    resource_class: macos.x86.medium.gen2
+  windows:
+    win/default
+    
 jobs:
   build:
-    machine:
-      image: ubuntu-2204:2023.10.1
+    parameters:
+      os:
+        type: executor
+    executor: << parameters.os >> 
     steps:
       - checkout
       - matlab/install
@@ -12,3 +27,11 @@ jobs:
           command: ver
       - matlab/run-tests:
           source-folder: code
+          
+workflows:
+  tests-on-all-platforms:
+    jobs:
+      - build:
+          matrix:
+            parameters:
+              os: [linux, macos, windows]
