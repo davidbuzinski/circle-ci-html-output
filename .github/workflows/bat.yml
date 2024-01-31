@@ -17,18 +17,18 @@ jobs:
 
       # Sets up MATLAB on the GitHub Actions runner 
       - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v1
+        uses: matlab-actions/setup-matlab@v2
         with:
           release: ${{ matrix.release }}
 
       - name: Run command
-        uses: matlab-actions/run-command@v2
+        uses: matlab-actions/run-command@v1
         with:
           command: ver
           startup-options: -nodisplay
           
       - name: Run tests and generate artifacts
-        uses: matlab-actions/run-tests@v2
+        uses: matlab-actions/run-tests@v1
         with:
           source-folder: code
           startup-options: -nodisplay
