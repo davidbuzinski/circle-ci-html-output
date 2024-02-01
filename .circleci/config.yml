@@ -13,12 +13,11 @@ executors:
     resource_class: macos.x86.medium.gen2
   windows:
     win/default
-
-environment:
-  MATHWORKS_RMC_BASE_URL: https://ssd.mathworks.com/supportfiles/ci/run-matlab-command/v1
   
 jobs:
   build:
+    environment:
+      MATHWORKS_RMC_BASE_URL: https://ssd.mathworks.com/supportfiles/ci/run-matlab-command/v1
     parameters:
       os:
         type: executor
