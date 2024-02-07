@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   win: circleci/windows@5.0
-  matlab: mathworks/matlab@0
+  matlab: mathworks/matlab@dev:v1-beta
   
 executors:
   linux: # a Linux VM running Ubuntu 20.04 
