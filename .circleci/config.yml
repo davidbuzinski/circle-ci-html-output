@@ -16,8 +16,6 @@ executors:
   
 jobs:
   build:
-    environment:
-      MATHWORKS_RMC_BASE_URL: https://mw-ci-static-dev.s3.amazonaws.com/run-matlab-command/v1
     parameters:
       os:
         type: executor
