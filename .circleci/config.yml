@@ -4,7 +4,7 @@ orbs:
   matlab: mathworks/matlab@dev:v1-beta
   
 executors:
-  linux: # a Linux VM running Ubuntu 20.04 
+  linux: # a Linux VM running Ubuntu 20.04
     machine:
       image: ubuntu-2004:2023.10.1
   macos: # macos executor running Xcode
