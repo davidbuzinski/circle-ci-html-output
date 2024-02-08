@@ -19,7 +19,7 @@ jobs:
           release: ${{ matrix.release }}
 
       - name: Run command
-        uses: matlab-actions/run-command@v1.3.0
+        uses: matlab-actions/run-command@v1
         with:
           command: ver
           startup-options: -nodisplay
