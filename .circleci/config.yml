@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   win: circleci/windows@5.0
-  matlab: mathworks/matlab@0
+  matlab: mathworks/matlab@1
   
 executors:
   linux: # a Linux VM running Ubuntu 20.04
@@ -16,8 +16,6 @@ executors:
   
 jobs:
   build:
-    environment:
-      MATHWORKS_RMC_BASE_URL: https://mw-ci-static-dev.s3.amazonaws.com/run-matlab-command/v1
     parameters:
       os:
         type: executor
