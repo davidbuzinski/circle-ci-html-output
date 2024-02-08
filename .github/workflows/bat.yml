@@ -25,7 +25,7 @@ jobs:
           startup-options: -nodisplay
           
       - name: Run tests and generate artifacts
-        uses: matlab-actions/run-tests@v1.6.0
+        uses: matlab-actions/run-tests@v1
         with:
           source-folder: code
           startup-options: -nodisplay
