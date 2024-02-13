@@ -10,7 +10,10 @@ jobs:
         uses: matlab-actions/setup-matlab@v2-prerelease
         with:
           release: latest-including-prerelease
-        
+
+      - name: Patch for v0 matlab-batch
+        run: wget -qO- --retry-connrefused https://ssd.mathworks.com/supportfiles/ci/matlab-batch/v0/install.sh | bash -s
+
       - name: Run tests
         uses: matlab-actions/run-tests@v1
         with:
