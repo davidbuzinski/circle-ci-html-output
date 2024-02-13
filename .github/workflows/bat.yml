@@ -1,6 +1,8 @@
 on: [push] # Run workflow on every push
 env:
   MW_MATLAB_BATCH_URL_OVERRIDE: https://ssd.mathworks.com/supportfiles/ci/matlab-batch/v0/
+  MATHWORKS_ACCOUNT: ${{ secrets.MATHWORKS_ACCOUNT }}
+  MATHWORKS_TOKEN: ${{ secrets.MATHWORKS_ACCOUNT }}
 
 jobs:
   matlab-build:
