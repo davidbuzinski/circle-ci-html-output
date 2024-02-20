@@ -1,9 +1,6 @@
 on: [push] # Run workflow on every push
 env:
-  MW_MATLAB_BATCH_URL_OVERRIDE: https://ssd.mathworks.com/supportfiles/ci/matlab-batch/v0/
-  MATHWORKS_ACCOUNT: ${{ secrets.MATHWORKS_ACCOUNT }}
-  MATHWORKS_TOKEN: ${{ secrets.MATHWORKS_TOKEN }}
-
+  MW_MATLAB_BATCH_URL_OVERRIDE: https://mw-ci-static-dev.s3.amazonaws.com/matlab-batch/v2/
 jobs:
   matlab-build:
     strategy:
@@ -17,11 +14,5 @@ jobs:
         uses: matlab-actions/setup-matlab@v2-prerelease
         with:
           release: latest-including-prerelease
-          products: Parallel_Computing_Toolbox
-          
-      - name: Patch for v0 matlab-batch
-        run: curl -s https://ssd.mathworks.com/supportfiles/ci/matlab-batch/v0/install.sh | bash -s
-        shell: bash
-
       - name: Run tests
-        uses: matlab-actions/run-tests@v1
+        uses: matlab-actions/run-tests@v2
