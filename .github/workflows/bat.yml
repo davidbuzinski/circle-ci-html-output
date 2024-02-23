@@ -28,4 +28,4 @@ jobs:
         uses: matlab-actions/run-tests@v2
         with:
           source-folder: code
-          startup-options: -nodisplay
+          startup-options: -nodisplay 
