@@ -29,6 +29,7 @@ jobs:
           command: ver
       - matlab/run-tests:
           source-folder: code
+          use-parallel: true
           
 workflows:
   tests-on-all-platforms:
