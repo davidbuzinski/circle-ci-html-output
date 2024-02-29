@@ -24,7 +24,8 @@ jobs:
     executor: << parameters.os >> 
     steps:
       - checkout
-      - matlab/install
+      - matlab/install:
+          products: Parallel_Computing_Toolbox
       - matlab/run-command:
           command: ver
       - matlab/run-tests:
