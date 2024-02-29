@@ -29,3 +29,4 @@ jobs:
         with:
           source-folder: code
           startup-options: -nodisplay 
+          use-parallel: true
