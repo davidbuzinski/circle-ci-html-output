@@ -1,6 +1,5 @@
 on: [push] # Run workflow on every push
-env:
-  MW_MATLAB_BATCH_URL_OVERRIDE: https://mw-ci-static-dev.s3.amazonaws.com/matlab-batch/pft-workshop/
+
 jobs:
   matlab-build:
     strategy:
