@@ -4,7 +4,7 @@ jobs:
     name: Run Tests V2
     strategy:
       matrix:
-        os: [macos-latest-xlarge ]
+        os: [macos-14 ]
         release: [r2023b]
       fail-fast: false
     runs-on: ${{ matrix.os }}
