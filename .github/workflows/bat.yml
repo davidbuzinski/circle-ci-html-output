@@ -4,7 +4,7 @@ jobs:
     name: Run Tests V2
     strategy:
       matrix:
-        os: [windows-2022, ubuntu-22.04, macos-12]
+        os: [macos-latest-xlarge ]
         release: [r2023b]
       fail-fast: false
     runs-on: ${{ matrix.os }}
@@ -17,7 +17,6 @@ jobs:
         uses: matlab-actions/setup-matlab@v2
         with:
           release: ${{ matrix.release }}
-          products: Parallel_Computing_Toolbox
 
       - name: Run command
         uses: matlab-actions/run-command@v2
