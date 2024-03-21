@@ -21,4 +21,4 @@ jobs:
           release: ${{ matrix.release }}
 
       - name: Run command
-        run: cat ~/.matlab/licenses/batch.lic
+        run: matlab -batch "magic(10)"
