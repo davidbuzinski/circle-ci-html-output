@@ -2,8 +2,8 @@ on: [push]
 env:
   MATHWORKS_INSTALLER_BASE_URL: "https://mpmtest.s3.amazonaws.com"
 jobs: 
-  my-job-v2:
-    name: Run Tests V2
+  my-job:
+    name: Run Tests
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -21,14 +21,4 @@ jobs:
           release: ${{ matrix.release }}
 
       - name: Run command
-        uses: matlab-actions/run-command@v1
-        with:
-          command: ver
-          startup-options: -nodisplay
-          
-      - name: Run tests and generate artifacts
-        uses: matlab-actions/run-tests@v1
-        with:
-          source-folder: code
-          startup-options: -nodisplay 
-          use-parallel: true
+        run: matlab -batch "magic(10)"
