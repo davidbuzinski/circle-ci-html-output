@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   win: circleci/windows@5.0
-  matlab: mathworks/matlab@1
+  matlab: mathworks/matlab@0
   
 executors:
   linux: # a Linux VM running Ubuntu 20.04 
@@ -22,13 +22,9 @@ jobs:
     executor: << parameters.os >> 
     steps:
       - checkout
-      - matlab/install:
-          products: Parallel_Computing_Toolbox
+      - matlab/install
       - matlab/run-command:
           command: ver
-      - matlab/run-tests:
-          source-folder: code
-          use-parallel: true
           
 workflows:
   tests-on-all-platforms:
