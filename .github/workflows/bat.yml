@@ -1,6 +1,4 @@
 on: [push]
-env:
-  MATHWORKS_INSTALLER_BASE_URL: "https://mpmtest.s3.amazonaws.com"
 jobs: 
   my-job:
     name: Run Tests
@@ -16,10 +14,9 @@ jobs:
 
       # Sets up MATLAB on the GitHub Actions runner  
       - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v1
-        with:
-          release: # optional
+        uses: matlab-actions/setup-matlab@v2
 
       - name: Run command
-        run: matlab -batch "magic(10)"
-          
+        uses: matlab-actions/run-command@v2
+        with:
+          command: magic(10)
