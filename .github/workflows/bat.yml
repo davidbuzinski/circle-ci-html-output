@@ -16,7 +16,7 @@ jobs:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v2
 
-      - run: matlab-batch version
+      - run: matlab-batch -v
       
       - name: Run command
         uses: matlab-actions/run-command@v2
