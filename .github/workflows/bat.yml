@@ -1,24 +1,16 @@
+name: Run MATLAB Tests
 on: [push]
-jobs: 
+jobs:
   my-job:
-    name: Run Tests
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        release: [r2023b]
-      fail-fast: false
-    runs-on: ${{ matrix.os }}
-    steps: 
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      # Sets up MATLAB on the GitHub Actions runner  
-      - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v2
-
-      - run: matlab-batch -v
-      
-      - name: Run command
-        uses: matlab-actions/run-command@v2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: matlab-actions/setup-matlab@v2
         with:
-          command: magic(10)
+          products: |
+            Simulink
+            Simulink_Test
+            Parallel_Computing_Toolbox
+      - uses: matlab-actions/run-tests@v2
+        with:
+          use-parallel: true
