@@ -1,18 +1,15 @@
-on: [push] # Run workflow on every push
-
+name: Use MATLAB Batch Licensing Token
+on: [push]
+env:
+  MLM_LICENSE_TOKEN: ${{ secrets.MyToken }}
 jobs:
-  matlab-build:
-    strategy:
-      matrix:
-        os: [windows-2022, ubuntu-22.04, macos-12]
-        release: [r2023b]
-      fail-fast: false
-    runs-on: ${{ matrix.os }}
+  my-job:
+    name: Run MATLAB Build in Private Project
+    runs-on: ubuntu-latest
     steps:
-      - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v2-prerelease
-        with:
-          release: latest-including-prerelease
-          cache: true
-      - name: Run tests
-        uses: matlab-actions/run-tests@v2
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v2
+      - name: Run build
+        uses: matlab-actions/run-build@v2
