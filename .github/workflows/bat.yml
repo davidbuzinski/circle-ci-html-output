@@ -1,13 +1,8 @@
 on: [push]
 jobs: 
   my-job:
-    name: Run Tests
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        release: [r2023b]
-      fail-fast: false
-    runs-on: ${{ matrix.os }}
+    name: Run Build
+    runs-on: ubuntu-latest
     steps: 
       - name: Check out repository
         uses: actions/checkout@v4
@@ -15,10 +10,6 @@ jobs:
       # Sets up MATLAB on the GitHub Actions runner  
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v2
-
-      - run: matlab-batch -v
       
       - name: Run command
-        uses: matlab-actions/run-command@v2
-        with:
-          command: magic(10)
+        uses: matlab-actions/run-build@v2
