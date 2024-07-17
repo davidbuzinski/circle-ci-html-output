@@ -11,6 +11,6 @@ jobs:
         with:
           release: latest-including-prerelease
       - name: Run command
-        uses: matlab-actions/run-build@v2
+        uses: matlab-actions/run-command@v2
         with:
           command: ver
