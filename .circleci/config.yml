@@ -22,6 +22,7 @@ jobs:
     executor: << parameters.os >> 
     steps:
       - checkout
+      - run: env
       - matlab/install
       - matlab/run-command:
           command: ver
