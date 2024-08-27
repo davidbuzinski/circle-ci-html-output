@@ -10,7 +10,7 @@ jobs:
         uses: matlab-actions/setup-matlab@bash
         with:
           products: Symbolic_Math_Toolbox
-          release: R2023b
+          release: R2024a
       - name: Run command
         uses: matlab-actions/run-command@v2
         with:
