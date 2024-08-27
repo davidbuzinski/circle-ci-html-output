@@ -8,6 +8,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@bash
+        with:
+          products: Symbolic_Math_Toolbox
       - name: Run command
         uses: matlab-actions/run-command@v2
         with:
