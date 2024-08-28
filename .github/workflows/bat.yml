@@ -2,15 +2,9 @@ on: [push]
 jobs: 
   my-job:
     name: Run Build
-    runs-on: ubuntu-24.04
+    runs-on: windows-latest
     steps: 
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@bash
-        with:
-          release: latest-including-prerelease
-      - name: Run command
-        uses: matlab-actions/run-command@v2
-        with:
-          command: ver
+      - run: echo "Hello"
+        shell: bash
