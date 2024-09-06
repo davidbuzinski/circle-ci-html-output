@@ -10,7 +10,4 @@ jobs:
         uses: matlab-actions/setup-matlab@bash
         with:
           release: latest-including-prerelease
-      - name: Run command
-        uses: matlab-actions/run-command@v2
-        with:
-          command: ver
+      - run: matlab-batch -v
