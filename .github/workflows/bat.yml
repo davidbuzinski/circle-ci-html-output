@@ -1,8 +1,4 @@
-# This workflow runs a matrix build with both versions of setup MATLAB action
-
 name: MATLAB matrix build
-
-# Controls when the action will run.
 on:
   push:
   pull_request:
@@ -10,15 +6,13 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        # Run this workflow on different os
-        os: [ubuntu-22.04, macos-12, macos-14]
-      fail-fast: false
-    # The type of runner that the job will run on
-    runs-on: ${{ matrix.os }}
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - run: hostname
+    - name: Setup MATLAB
+      uses: matlab-actions/setup-matlab@v2
+      with:
+        release: r2023b
+    - name: Run command
+      uses: matlab-actions/run-command@v2
+      with:
+        command: ver
