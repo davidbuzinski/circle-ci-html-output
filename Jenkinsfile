@@ -17,7 +17,6 @@ pipeline {
       steps {
         echo "deploying"
         // sleep 5
-        exit 1
       }
     }
   }
