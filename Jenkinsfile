@@ -14,8 +14,12 @@ pipeline {
     stage('Deploy') {
       steps {
         echo "deploying"
-        publishChecks()
       }
     }
+  }
+  post { 
+      always { 
+        publishChecks()
+      }
   }
 }
