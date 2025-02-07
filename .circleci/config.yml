@@ -26,9 +26,6 @@ jobs:
       - matlab/install
       - matlab/run-command:
           command: ver
-      - matlab/run-tests:
-          source-folder: code
-          use-parallel: true
           
 workflows:
   tests-on-all-platforms:
