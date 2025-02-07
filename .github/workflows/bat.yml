@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         # Run this workflow on different os
-        os: [ubuntu-22.04, macos-12, macos-14]
+        os: [ubuntu-24.04]
       fail-fast: false
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
