@@ -13,38 +13,18 @@ jobs:
     strategy:
       matrix:
         # Run this workflow on different os
-        os: [ubuntu-24.04]
+        command: ["disp('hi')", "disp('hello')", "disp('hey')", "disp('sup')", "disp('yo')", "disp('greetings')", "disp('howdy')"]
       fail-fast: false
     # The type of runner that the job will run on
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v2
         with:
-          products: "Parallel_Computing_Toolbox --no-gpu"
+          products: Symbolic_Math_Toolbox
       - name: Run MATLAB Command
         uses: matlab-actions/run-command@v2
         with:
-          command: ver
-
-  gpu:
-    strategy:
-      matrix:
-        # Run this workflow on different os
-        os: [ubuntu-22.04, macos-12, macos-14]
-      fail-fast: false
-    # The type of runner that the job will run on
-    runs-on: ${{ matrix.os }}
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v2
-        with:
-          products: "Parallel_Computing_Toolbox"
-      - name: Run MATLAB Command
-        uses: matlab-actions/run-command@v2
-        with:
-          command: ver
+          command: ${{ matrix.command }}
