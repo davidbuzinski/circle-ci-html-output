@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         # Run this workflow on different os
-        command: ["assert(true);", "assert(true);", "assert(true);", "assert(true);", "assert(true);", "assert(true);", "assert(true);"]
+        command: ["exit;", "exit;", "exit;", "exit;", "exit;", "exit;", "exit;"]
       fail-fast: false
     # The type of runner that the job will run on
     runs-on: macos-latest
