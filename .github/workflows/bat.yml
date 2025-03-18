@@ -1,8 +1,10 @@
-name: MATLAB matrix build
+name: MATLAB build
 on:
   push:
   pull_request:
   workflow_dispatch:
+env:
+  MATHWORKS_LICENSING_ENDPOINT: dev
 
 jobs:
   build:
@@ -10,8 +12,6 @@ jobs:
     steps:
     - name: Setup MATLAB
       uses: matlab-actions/setup-matlab@v2
-      with:
-        release: r2024b
     - name: Run command
       uses: matlab-actions/run-command@v2
       with:
