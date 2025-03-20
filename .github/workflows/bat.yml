@@ -11,7 +11,7 @@ jobs:
     - name: Install MATLAB dependencies
       run: >
         sudo apt-get update &
-        wget -qO- https://raw.githubusercontent.com/mathworks-ref-arch/container-images/refs/heads/main/matlab-deps/r2024b/ubuntu24.04/base-dependencies.txt | apt-get install -y
+        wget -qO- https://raw.githubusercontent.com/mathworks-ref-arch/container-images/refs/heads/main/matlab-deps/r2024b/ubuntu24.04/base-dependencies.txt | sudo apt-get install -y
     - name: Setup MATLAB
       uses: matlab-actions/setup-matlab@v2
       with:
