@@ -23,10 +23,12 @@ jobs:
       - uses: actions/checkout@v6
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v3
-        with:
-          products: MATLAB_Test
       - name: Run Tests
         uses: matlab-actions/run-tests@v3
         with:
           source-folder: code
-          code-coverage-metric-level: mcdc # new option to configure metric level
+          code-coverage-cobertura: reports/coverage.xml
+      - name: Upload Reports
+        uses: actions/upload-artifact@v7
+        with:
+          path: reports
