@@ -29,4 +29,4 @@ jobs:
         uses: matlab-actions/run-tests@v3
         with:
           source-folder: code
-          code-coverage-cobertura: results/cobertera.xml
+          code-coverage-metric-level: mcdc # new option to configure metric level
