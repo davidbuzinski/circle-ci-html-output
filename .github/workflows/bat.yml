@@ -23,6 +23,8 @@ jobs:
       - uses: actions/checkout@v6
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v3
+        with:
+          products: MATLAB_Test
       - name: Run Tests
         uses: matlab-actions/run-tests@v3
         with:
