@@ -27,7 +27,6 @@ jobs:
         uses: matlab-actions/run-tests@v3
         with:
           source-folder: code
-          code-coverage-cobertura: reports/coverage.xml
       - name: Upload Reports
         uses: actions/upload-artifact@v7
         with:
