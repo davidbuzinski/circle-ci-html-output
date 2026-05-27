@@ -24,10 +24,4 @@ jobs:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v3
       - name: Run Tests
-        uses: matlab-actions/run-tests@v3
-        with:
-          source-folder: code
-      - name: Upload Reports
-        uses: actions/upload-artifact@v7
-        with:
-          path: reports
+        uses: matlab-actions/run-build@v3
