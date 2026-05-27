@@ -24,4 +24,6 @@ jobs:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v3
       - name: Run Tests
-        uses: matlab-actions/run-build@v3
+        uses: matlab-actions/run-command@v3
+        with:
+          command: buildtool
