@@ -28,4 +28,5 @@ jobs:
       - name: Run Tests
         uses: matlab-actions/run-tests@v3
         with:
+          source-folder: code
           code-coverage-metric-level: mcdc
