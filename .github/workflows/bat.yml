@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         # Run this workflow on different os
-        os: [ubuntu-24.04]
+        os: [ubuntu-latest, windows-latest, macos-latest]
       fail-fast: false
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
@@ -24,9 +24,6 @@ jobs:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v3
         with:
-          products: MATLAB_Test
+          release: latest-including-prerelease
       - name: Run Tests
-        uses: matlab-actions/run-tests@v3
-        with:
-          source-folder: code
-          code-coverage-metric-level: mcdc
+        uses: matlab-actions/run-build@v3
