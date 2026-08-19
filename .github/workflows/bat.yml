@@ -24,6 +24,7 @@ jobs:
         uses: matlab-actions/setup-matlab@v3
         with:
           release: R2021b
+          cache: true
       - name: Run Tests
         uses: matlab-actions/run-tests@v3
         with:
