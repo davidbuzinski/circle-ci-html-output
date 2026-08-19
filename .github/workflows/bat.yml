@@ -23,6 +23,11 @@ jobs:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v3
         with:
-          release: latest-including-prerelease
+          release: R2021b
       - name: Run Tests
-        uses: matlab-actions/run-build@v3
+        uses: matlab-actions/run-tests@v3
+        with:
+          source-folder: src
+          select-by-folder: tests
+          test-results-junit: test.xml
+          code-coverage-cobertura: coverage.xml
