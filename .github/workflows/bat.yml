@@ -12,7 +12,8 @@ jobs:
     strategy:
       matrix:
         # Run this workflow on different os
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest]
+        release: [r2020b, r2021a, r2021b, r2022a, r2022b, r2023a]
       fail-fast: false
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
@@ -23,8 +24,7 @@ jobs:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v3
         with:
-          release: R2021b
-          cache: true
+          release: ${{ matrix.release }}
       - name: Run Tests
         uses: matlab-actions/run-tests@v3
         with:
