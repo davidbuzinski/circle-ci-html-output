@@ -28,7 +28,7 @@ jobs:
       - name: Run Tests
         uses: matlab-actions/run-tests@v3
         with:
-          source-folder: src
+          source-folder: code
           select-by-folder: tests
           test-results-junit: test.xml
           code-coverage-cobertura: coverage.xml
