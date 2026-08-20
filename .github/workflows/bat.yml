@@ -13,7 +13,7 @@ jobs:
       matrix:
         # Run this workflow on different os
         os: [ubuntu-latest]
-        release: [r2020b, r2021a, r2021b, r2022a, r2022b, r2023a]
+        release: [latest]
       fail-fast: false
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
@@ -25,10 +25,7 @@ jobs:
         uses: matlab-actions/setup-matlab@v3
         with:
           release: ${{ matrix.release }}
-      - name: Run Tests
-        uses: matlab-actions/run-tests@v3
+      - name: Run tests
+        uses: matlab-actions/run-command@v3
         with:
-          source-folder: code
-          select-by-folder: tests
-          test-results-junit: test.xml
-          code-coverage-cobertura: coverage.xml
+          command: addpath(genpath("hedcode")), addpath(genpath("tests"), runAllTests
