@@ -13,7 +13,7 @@ jobs:
       matrix:
         # Run this workflow on different os
         os: [ubuntu-latest]
-        release: [r2020b, r2021a, r2021b, r2022a, r2022b, r2023a]
+        release: [r2020b, r2021a, r2021b, r2022a, r2022b, r2023a, r2023b, r2024a, r2024b, r2025a, r2025b, r2026a, latest-including-prerelease]
       fail-fast: false
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
