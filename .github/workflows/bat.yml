@@ -20,14 +20,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v2
-        with:
-          products: "Parallel_Computing_Toolbox --no-gpu"
-      - name: Run MATLAB Command
-        uses: matlab-actions/run-command@v2
-        with:
-          command: ver
+      - run: echo $GITHUB_JOB
+      # - name: Setup MATLAB
+      #   uses: matlab-actions/setup-matlab@v2
+      #   with:
+      #     products: "Parallel_Computing_Toolbox --no-gpu"
+      # - name: Run MATLAB Command
+      #   uses: matlab-actions/run-command@v2
+      #   with:
+      #     command: ver
 
   gpu:
     strategy:
@@ -40,11 +41,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Setup MATLAB
-        uses: matlab-actions/setup-matlab@v2
-        with:
-          products: "Parallel_Computing_Toolbox"
-      - name: Run MATLAB Command
-        uses: matlab-actions/run-command@v2
-        with:
+      - run: echo $GITHUB_JOB
+      # - name: Setup MATLAB
+      #   uses: matlab-actions/setup-matlab@v2
+      #   with:
+      #     products: "Parallel_Computing_Toolbox"
+      # - name: Run MATLAB Command
+      #   uses: matlab-actions/run-command@v2
+      #   with:
           command: ver
