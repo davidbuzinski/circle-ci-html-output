@@ -41,7 +41,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - run: echo $GH_MATRIX
+      - run: cat $GITHUB_EVENT_PATH
       # - name: Setup MATLAB
       #   uses: matlab-actions/setup-matlab@v2
       #   with:
