@@ -20,11 +20,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v3
         with:
           release: ${{ matrix.release }}
+          cache: true
       - name: Run Tests
         uses: davidbuzinski/run-build@main
         with:
