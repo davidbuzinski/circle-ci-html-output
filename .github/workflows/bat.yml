@@ -26,7 +26,7 @@ jobs:
         with:
           release: ${{ matrix.release }}
       - name: Run Tests
-        uses: davidbuzinski/run-build@v3
+        uses: davidbuzinski/run-build@main
         with:
           cache: true
           build-options: -outputCache
