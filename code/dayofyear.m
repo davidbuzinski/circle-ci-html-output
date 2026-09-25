@@ -7,6 +7,7 @@ function doy = dayofyear(mmddyy,dateFormat)
 %       where d is a datetime object
 
 % Copyright 2022 The MathWorks, Inc.
+% comment
 
 arguments
     mmddyy string;
