@@ -6,7 +6,7 @@ addpath("code");
 
 plan("clean") = CleanTask;
 plan("check") = CodeIssuesTask;
-plan("test") = TestTask;
+plan("test") = TestTask("tests", SourceFiles="code");
 
 plan.DefaultTasks = ["check" "test"];
 end
