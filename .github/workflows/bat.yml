@@ -27,7 +27,6 @@ jobs:
           release: ${{ matrix.release }}
           cache: true
       - name: Run Tests
-        uses: davidbuzinski/run-build@main
+        uses: matlab-actions/run-tests@v3
         with:
-          cache: true
-          build-options: -outputCache
+          strict: ''
