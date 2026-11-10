@@ -13,7 +13,7 @@ jobs:
       matrix:
         # Run this workflow on different os
         os: [ubuntu-latest]
-        release: [latest-including-prerelease]
+        release: [r2026a]
       fail-fast: false
     # The type of runner that the job will run on
     runs-on: ${{ matrix.os }}
@@ -26,6 +26,7 @@ jobs:
         with:
           release: ${{ matrix.release }}
           cache: true
+          build_options: -outputCache
       - name: Run Tests
         uses: matlab-actions/run-tests@v3
         with:
