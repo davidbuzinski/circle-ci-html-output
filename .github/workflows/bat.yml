@@ -26,8 +26,8 @@ jobs:
         with:
           release: ${{ matrix.release }}
           cache: true
-          build_options: -outputCache
       - name: Run Tests
-        uses: matlab-actions/run-tests@v3
+        uses: matlab-actions/run-build@v3
         with:
-          strict: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' }}
+          cache: true
+          build_options: -outputCache
