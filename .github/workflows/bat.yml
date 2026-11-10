@@ -30,4 +30,4 @@ jobs:
         uses: matlab-actions/run-build@v3
         with:
           cache: true
-          build-options: -outputCache
+          build-options: -outputCache -ignoreUnknownOptions
